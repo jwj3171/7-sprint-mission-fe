@@ -1,3 +1,5 @@
+// components/LoadingSpinner.tsx
+
 import styles from "./LoadingSpinner.module.css";
 
 export default function LoadingSpinner() {

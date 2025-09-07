@@ -5,7 +5,11 @@ import { useUser } from "@/components/Contexts/UserContext";
 import { useRouter } from "next/navigation";
 import styles from "./WriteButton.module.css";
 
-export default function WriteButton() {
+type WriteButtonProps = {
+  className?: string;
+};
+
+export default function WriteButton({ className }: WriteButtonProps) {
   const { isLoggedIn } = useUser();
   const router = useRouter();
 
@@ -20,7 +24,7 @@ export default function WriteButton() {
   };
 
   return (
-    <button onClick={handleClick} className={styles.writeButton}>
+    <button onClick={handleClick} className={className ?? styles.writeButton}>
       글쓰기
     </button>
   );
